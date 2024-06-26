@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  
+}
+nav{
+  position: sticky;
+  z-index: 99;
+  width: 100%;
+  background: #ffffff;
+  
+}
+.logo{
+    margin-left: 20px;
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}
+nav .wrapper{
+  position: relative;
+  max-width: 1300px;
+  padding: 0px 30px;
+  height: 70px;
+  line-height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper .nav-links{
+  display: inline-flex;
+}
+.nav-links li{
+  list-style: none;
+}
+.nav-links li a{
+  color: #000000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.nav-links li a:hover{
+  background: #f3cd87;
+}
+.nav-links .mobile-item{
+  display: none;
+}
+.nav-links .drop-menu{
+  position: absolute;
+  background: #b84343;
+  width: 180px;
+  line-height: 45px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 6px 10px rgba(236, 236, 236, 0.959);
+}
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box{
+  transition: all 0.3s ease;
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+.drop-menu li a{
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  border-radius: 0px;
+}
+.mega-box{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+}
+.mega-box .content{
+  background: #f0cd8c;
+  padding: 25px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 0 6px 10px rgb(22, 22, 22);
+}
+.mega-box .content .row{
+  width: calc(25% - 30px);
+  line-height: 45px;
+}
+.content .row img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content .row header{
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+}
+.content .row .mega-links{
+  margin-left: -40px;
+  border-left: 1px solid rgb(0, 0, 0);
+}
+.row .mega-links li{
+  padding: 0 20px;
+}
+.row .mega-links li a{
+  padding: 0px;
+  padding: 0 20px;
+  color: #000000be;
+  font-size: 17px;
+  display: block;
+}
+.row .mega-links li a:hover{
+  color: #000000;
+}
+.wrapper .btn{
+  color: #ad3939;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.wrapper .btn.close-btn{
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+@media screen and (max-width: 970px) {
+  .wrapper .btn{
+    display: block;
+  }
+  .wrapper .nav-links{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    top: 0;
+    left: -100%;
+    background: #ffffff;
+    display: block;
+    padding: 50px 10px;
+    line-height: 50px;
+    overflow-y: auto;
+    box-shadow: 0px 15px 15px rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  /* custom scroll bar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fefeff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #fdfeff;
+  }
+  #menu-btn:checked ~ .nav-links{
+    left: 0%;
+  }
+  #menu-btn:checked ~ .btn.menu-btn{
+    display: none;
+  }
+  #close-btn:checked ~ .btn.menu-btn{
+    display: block;
+  }
+  .nav-links li{
+    margin: 15px 10px;
+  }
+  .nav-links li a{
+    padding: 0 20px;
+    display: block;
+    font-size: 20px;
+  }
+  .nav-links .drop-menu{
+    position: static;
+    opacity: 1;
+    top: 65px;
+    visibility: visible;
+    padding-left: 20px;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.3s ease;
+  }
+  #showDrop:checked ~ .drop-menu,
+  #showMega:checked ~ .mega-box{
+    max-height: 100%;
+  }
+  .nav-links .desktop-item{
+    display: none;
+  }
+  .nav-links .mobile-item{
+    display: block;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .nav-links .mobile-item:hover{
+    background: #3A3B3C;
+  }
+  .drop-menu li{
+    margin: 0;
+  }
+  .drop-menu li a{
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  .mega-box{
+    position: static;
+    top: 65px;
+    opacity: 1;
+    visibility: visible;
+    padding: 0 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .mega-box .content{
+    box-shadow: none;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+  }
+  .mega-box .content .row{
+    width: 100%;
+    margin-bottom: 15px;
+    border-top: 1px solid rgb(168, 39, 39);
+  }
+  .mega-box .content .row:nth-child(1),
+  .mega-box .content .row:nth-child(2){
+    border-top: 0px;
+  }
+  .content .row .mega-links{
+    border-left: 0px;
+    padding-left: 15px;
+  }
+  .row .mega-links li{
+    margin: 0;
+  }
+  .content .row header{
+    font-size: 19px;
+  }
+}
+nav input{
+  display: none;
+}
+
+.body-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+}
+.body-text div{
+  font-size: 45px;
+  font-weight: 600;
+}
+.carousel-item img{
+    height: 350px;
+}
+.stylish-button {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+  }
+  
+  .stylish-button:hover {
+    background-color: #3700b3;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .stylish-button:active {
+    background-color: #2f05ca;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+  }
+  
+  #products{
+    margin-top: 50px;
+    display:inline-block;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+  }
+  #topbestsellingproducts{
+    margin:0; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+  }
+  #topbestsellingproduct a :hover{
+    background-color: #ffe600;
+    font-size: 50px;
+  }
+  #cards{
+    margin-top: 80px;
+  }
+  .topselling{
+    margin-top: 100px;
+    width: 100%;
+    height: 60vh;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image/calendar\ &\ Diaries.webp);
+    background-size: cover;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+  }
+  .topselling h3{
+    padding-top: 132px;
+    color: #ffc800;
+    font-size: 32px;
+  }
+  .topselling p{
+    color: #ffc800;
+  }
+  #btnorder{
+    width: 200px;
+    height: 32px;
+    background: transparent;
+    color: #ffc800;
+    border: 2px solid #ffc800;
+    transition: 0.5s ease;
+  }
+  #btnorder:hover{
+    background-color: #ffc800;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  #topcards{
+    margin-top: 50px;
+  }
+  #topcards .card{
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+  #topcards .card:hover{
+    background-color: #A7E6FF;
+  }
+  #line{
+    border-bottom: 2px solid #d8d1b8;
+    width:90% ;
+    margin-top: 38px;
+  }
+  .banner{
+    margin-top: 100px;
+    width: 100%;
+    height: 60vh;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image/mid-year-diaries-scaled.jpg);
+    background-size: cover;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+  }
+  .banner h3{
+    padding-top: 132px;
+    color: #ffc800;
+    font-size: 32px;
+  }
+  .banner p{
+    color: #ffc800;
+  }
+  #btnorder{
+    width: 200px;
+    height: 32px;
+    background: transparent;
+    color: #ffc800;
+    border: 2px solid #ffc800;
+    transition: 0.5s ease;
+  }
+  #btnorder:hover{
+    background-color: #ffc800;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  #diaries{
+    margin-top: 50px;
+    font-family: 'Roboto Slab', serif;
+  }
+  #diaries h5{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+    border-bottom: 2px solid #ffffff;
+    text-shadow: 1px 1px 1px rgb(121, 118, 118);
+  }
+  #diaries .card{
+   
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+  #diaries .card:hover{
+    background-color: #A7E6FF;
+  }
+  #diaries .card h3{
+    font-weight: bold;
+    text-shadow: 0px 0px 1px #fffdfd;
+  }
+  #daiare .card h1{
+    color: #faf8f8;
+  }
+  .Planner{
+    margin-top: 100px;
+    width: 100%;
+    height: 60vh;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image/CollectionMO20241200x600_72dpi.webp);
+    background-size: cover;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+  }
+  .Planner h3{
+    padding-top: 132px;
+    color: #ffc800;
+    font-size: 32px;
+  }
+  .Planner p{
+    color: #ffc800;
+  }
+  #btnorder{
+    width: 200px;
+    height: 32px;
+    background: transparent;
+    color: #ffc800;
+    border: 2px solid #ffc800;
+    transition: 0.5s ease;
+  }
+  #btnorder:hover{
+    background-color: #ffc800;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  #Planners{
+    margin-top: 50px;
+    font-family: 'Roboto Slab', serif;
+  }
+  #Planners h5{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+    border-bottom: 2px solid #ffffff;
+    text-shadow: 1px 1px 1px rgb(121, 118, 118);
+  }
+  #Planners .card{
+   
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+  #Planners .card:hover{
+    background-color: #A7E6FF;
+  }
+  #Planners .card h3{
+    font-weight: bold;
+    text-shadow: 0px 0px 1px #fffdfd;
+  }
+#Planners .card h1{
+    color: #faf8f8;
+  }
+  .label {
+    position:absolute;
+    top: 0px;
+    background-color:rgb(15, 15, 15);
+    color: #f5f6fa;
+    padding: 4px 8px;
+    border-radius: 2px;
+    margin-left: 0%;
+    margin: 1%;
+    font-size: 13px;
+    font-weight: 500px;
+}
+.hourly{
+  margin-top: 100px;
+  width: 100%;
+  height: 60vh;
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image/hourly\ collection.jpg);
+  background-size: cover;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+}
+.hourly h3{
+  padding-top: 132px;
+  color: #ffc800;
+  font-size: 32px;
+}
+.hourly p{
+  color: #ffc800;
+}
+#btnorder{
+  width: 200px;
+  height: 32px;
+  background: transparent;
+  color: #ffc800;
+  border: 2px solid #ffc800;
+  transition: 0.5s ease;
+}
+#btnorder:hover{
+  background-color: #ffc800;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+#hourlys{
+  margin-top: 50px;
+  font-family: 'Roboto Slab', serif;
+}
+#hourlys h5{
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+  border-bottom: 2px solid #ffffff;
+  text-shadow: 1px 1px 1px rgb(121, 118, 118);
+}
+#hourlys .card{
+ 
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+#hourlys .card:hover{
+  background-color: #A7E6FF
+}
+#hourlys .card h3{
+  font-weight: bold;
+  text-shadow: 0px 0px 1px #fffdfd;
+}
+#hourlys .card h1{
+  color: #faf8f8;
+}
+.Pocketdiary{
+  margin-top: 100px;
+  width: 100%;
+  height: 60vh;
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image/main_diary_pocket2024.jpg);
+  background-size: cover;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+}
+.Pocketdiary h3{
+  padding-top: 132px;
+  color: #ffc800;
+  font-size: 32px;
+}
+.Pocketdiary p{
+  color: #ffc800;
+}
+#btnorder{
+  width: 200px;
+  height: 32px;
+  background: transparent;
+  color: #ffc800;
+  border: 2px solid #ffc800;
+  transition: 0.5s ease;
+}
+#btnorder:hover{
+  background-color: #ffc800;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+#Pocketdiarys{
+  margin-top: 50px;
+  font-family: 'Roboto Slab', serif;
+}
+#Pocketdiarys h5{
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+  border-bottom: 2px solid #ffffff;
+  text-shadow: 1px 1px 1px rgb(121, 118, 118);
+}
+#Pocketdiarys .card{
+ 
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+#Pocketdiarys .card:hover{
+  background-color: #A7E6FF
+}
+#Pocketdiarys .card h3{
+  font-weight: bold;
+  text-shadow: 0px 0px 1px #fffdfd;
+}
+#Pocketdiarys .card h1{
+  color: #faf8f8;
+}
+.rating{
+  margin-left: 95px;
+  display: inline;
+}
+.DeskCalendar{
+  margin-top: 100px;
+  width: 100%;
+  height: 60vh;
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image/cccc\ \(1\).webp);
+  background-size: cover;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+}
+.DeskCalendar h3{
+  padding-top: 132px;
+  color: #ffc800;
+  font-size: 32px;
+}
+.DeskCalendar p{
+  color: #ffc800;
+}
+#btnorder{
+  width: 200px;
+  height: 32px;
+  background: transparent;
+  color: #ffc800;
+  border: 2px solid #ffc800;
+  transition: 0.5s ease;
+}
+#btnorder:hover{
+  background-color: #ffc800;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+#deskcalendars{
+  margin-top: 50px;
+  font-family: 'Roboto Slab', serif;
+}
+#deskcalendars h5{
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+  border-bottom: 2px solid #ffffff;
+  text-shadow: 1px 1px 1px rgb(121, 118, 118);
+}
+#deskcalendars .card{
+ 
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+#deskcalendars .card:hover{
+  background-color: #A7E6FF
+}
+#deskcalendars .card h3{
+  font-weight: bold;
+  text-shadow: 0px 0px 1px #fffdfd;
+}
+#deskcalendars .card h1{
+  color: #faf8f8;
+}
